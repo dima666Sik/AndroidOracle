@@ -41,11 +41,11 @@
 
             <EditText
                 android:id="@+id/myQuestion"
-                android:textSize="12sp"
                 style="@style/TextHint.Results"
+                android:layout_height="match_parent"
                 android:hint="Fill in the field"
                 android:imeOptions="actionNext"
-                android:layout_height="match_parent" />
+                android:textSize="12sp" />
         </TableRow>
 
         <TableRow>

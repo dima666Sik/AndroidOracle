@@ -2,7 +2,7 @@
 
 ## Preview
 1. This project uses jdk 8;
-2. Navigation is built on fragments;
+2. Navigation is built on activities;
 
 ## Features
 ☑️Main screen with buttons:

@@ -73,4 +73,14 @@ public class User implements Parcelable {
         dest.writeString(dateOfBirth);
         dest.writeString(gender);
     }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", dateOfBirth='" + dateOfBirth + '\'' +
+                ", gender='" + gender + '\'' +
+                '}';
+    }
 }
