@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:gravity="center"
     android:padding="@dimen/screenPadding">
     <TextView
         android:id="@+id/titleTextView"
@@ -66,8 +67,8 @@
 
     <TextView
         android:id="@+id/errorTextView"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_width="6dp"
+        android:layout_height="34dp"
         android:gravity="center"
         android:maxWidth="200dp"
         android:textColor="@color/error"
@@ -77,17 +78,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@id/resultsTable"
         tools:text="Error" />
-
-    <Button
-        android:id="@+id/doneButton"
-        style="@style/PrimaryButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/done"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/resultsTable" />
 
     <Button
         android:id="@+id/tryAgainButton"
@@ -100,4 +90,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/resultsTable" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <Button
+        android:id="@+id/doneButton"
+        style="@style/PrimaryButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/done"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/resultsTable" />
+
+</LinearLayout>

@@ -28,6 +28,9 @@
         <activity
             android:name=".activities.BaseActivity"
             android:label="BaseActivity" />
+
+        <service android:name=".generator.GenerateAnswerService" />
+
     </application>
 
 </manifest>

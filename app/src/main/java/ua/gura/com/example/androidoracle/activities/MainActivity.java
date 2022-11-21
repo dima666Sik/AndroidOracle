@@ -8,8 +8,6 @@ import android.os.Bundle;
 import ua.gura.com.example.androidoracle.R;
 
 public class MainActivity extends BaseActivity {
-    public static final String TAG =
-            MainActivity.class.getSimpleName();
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState){

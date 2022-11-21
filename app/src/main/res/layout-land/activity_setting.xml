@@ -1,135 +1,155 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="@dimen/screenPadding">
+    android:orientation="horizontal"
+    android:gravity="center"
+    android:padding="@dimen/buttonRadius">
 
-    <TextView
-        android:id="@+id/titleTextView"
-        style="@style/ScreenTitle"
+    <TableRow
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/inputMargin"
-        android:fontFamily="sans-serif-medium"
-        android:text="@string/settings"
-        android:textColor="@color/black"
-        android:textSize="@dimen/font_size"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints" />
-
-    <EditText
-        android:id="@+id/firstNameEditText"
-        style="@style/Input"
-        android:layout_width="260dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="54dp"
-        android:hint="@string/first_name"
-        android:imeOptions="actionNext"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/titleTextView"
-        tools:ignore="MissingConstraints" />
-
-    <EditText
-        android:id="@+id/lastNameEditText"
-        style="@style/Input"
-        android:layout_width="260dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="55dp"
-        android:hint="@string/last_name"
-        android:imeOptions="actionDone"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/titleTextView"
-        tools:ignore="MissingConstraints" />
-
-    <TextView
-        android:id="@+id/dateOfBirth"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/inputMargin"
-        android:hint="@string/date_of_birth"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/lastNameEditText"
-        app:layout_constraintWidth_max="@dimen/inputWidth" />
-
-    <Button
-        android:id="@+id/chooseDate"
-        style="@style/PrimaryButton"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="56dp"
-        android:text="@string/choose_date"
-        app:layout_constraintBaseline_toBaselineOf="@id/dateOfBirth"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintWidth_max="@dimen/inputWidth" />
-
-    <RadioGroup
-        android:id="@+id/radioGroup"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/inputMargin"
-        android:orientation="vertical"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/dateOfBirth"
-        app:layout_constraintWidth_max="@dimen/inputWidth">
+        android:layout_height="wrap_content">
 
         <TextView
-            android:id="@+id/genderTitle"
+            android:id="@+id/titleTextView"
+            style="@style/ScreenTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
+            android:layout_column="1"
+            android:layout_marginTop="@dimen/inputMargin"
             android:fontFamily="sans-serif-medium"
-            android:text="@string/gender"
+            android:text="@string/settings"
             android:textColor="@color/black"
+            android:textSize="@dimen/font_size"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             tools:ignore="MissingConstraints" />
+    </TableRow>
 
-        <RadioButton
-            android:id="@+id/radioMale"
+    <TableRow
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <EditText
+            android:id="@+id/firstNameEditText"
+            style="@style/Input"
+            android:layout_width="260dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="55dp"
+            android:hint="@string/first_name"
+            android:imeOptions="actionNext"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/titleTextView"
+            android:layout_column="0"
+            tools:ignore="MissingConstraints" />
+
+        <EditText
+            android:id="@+id/lastNameEditText"
+            style="@style/Input"
+            android:layout_width="260dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="55dp"
+            android:hint="@string/last_name"
+            android:imeOptions="actionDone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/titleTextView"
+            android:layout_column="1"
+            tools:ignore="MissingConstraints" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/dateOfBirth"
             android:layout_width="wrap_content"
-            android:layout_height="26dp"
-            android:text="@string/male" />
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/inputMargin"
+            android:hint="@string/date_of_birth"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/lastNameEditText"
+            android:layout_column="0"
+            app:layout_constraintWidth_max="@dimen/inputWidth" />
 
-        <RadioButton
-            android:id="@+id/radioFemale"
-            android:layout_width="wrap_content"
-            android:layout_height="26dp"
-            android:text="@string/female" />
-    </RadioGroup>
+        <Button
+            android:id="@+id/chooseDate"
+            style="@style/PrimaryButton"
+            android:layout_width="101dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="56dp"
+            android:text="@string/choose_date"
+            app:layout_constraintBaseline_toBaselineOf="@id/dateOfBirth"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintWidth_max="@dimen/inputWidth" />
+    </TableRow>
 
-    <Button
-        android:id="@+id/doneButton"
-        style="@style/PrimaryButton"
-        android:layout_width="0dp"
+    <TableRow
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            android:layout_width="61dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/inputMargin"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/dateOfBirth"
+            android:layout_column="0"
+            app:layout_constraintWidth_max="@dimen/inputWidth">
+
+            <TextView
+                android:id="@+id/genderTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="sans-serif-medium"
+                android:text="@string/gender"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:ignore="MissingConstraints" />
+
+            <RadioButton
+                android:id="@+id/radioMale"
+                android:layout_width="wrap_content"
+                android:layout_height="26dp"
+                android:text="@string/male" />
+
+            <RadioButton
+                android:id="@+id/radioFemale"
+                android:layout_width="wrap_content"
+                android:layout_height="26dp"
+                android:text="@string/female" />
+        </RadioGroup>
+    </TableRow>
+
+    <TableRow
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/bottomButtonsSpace"
-        android:text="@string/done"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/buttonsSpace" />
+        >
+        <Button
+            android:id="@+id/doneButton"
+            style="@style/PrimaryButton"
+            android:layout_width="339dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/bottomButtonsSpace"
+            android:text="@string/done"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/buttonsSpace" />
 
-    <Space
-        android:id="@+id/buttonsSpace"
-        android:layout_width="@dimen/buttonMargin"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/doneButton"
-        app:layout_constraintStart_toEndOf="@id/cancelButton" />
-
-    <Button
-        android:id="@+id/cancelButton"
-        style="@style/SecondaryButton"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="@string/cancel"
-        app:layout_constraintBottom_toBottomOf="@id/doneButton"
-        app:layout_constraintEnd_toStartOf="@id/buttonsSpace"
-        app:layout_constraintStart_toStartOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <Button
+            android:id="@+id/cancelButton"
+            style="@style/SecondaryButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/cancel"
+            app:layout_constraintBottom_toBottomOf="@id/doneButton"
+            app:layout_constraintEnd_toStartOf="@id/buttonsSpace"
+            app:layout_constraintStart_toStartOf="parent" />
+    </TableRow>
+</TableLayout>

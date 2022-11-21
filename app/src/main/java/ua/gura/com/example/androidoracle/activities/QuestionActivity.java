@@ -1,6 +1,10 @@
 package ua.gura.com.example.androidoracle.activities;
 
+import android.content.ComponentName;
+import android.content.Intent;
+import android.content.ServiceConnection;
 import android.os.Bundle;
+import android.os.IBinder;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
@@ -12,8 +16,9 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 
 import ua.gura.com.example.androidoracle.R;
-import ua.gura.com.example.androidoracle.generator.GenerateAnswer;
+import ua.gura.com.example.androidoracle.generator.GenerateAnswerService;
 import ua.gura.com.example.androidoracle.model.User;
+
 
 public class QuestionActivity extends BaseActivity {
     private static final String TAG =
@@ -25,6 +30,21 @@ public class QuestionActivity extends BaseActivity {
     private Button tryAgainButton;
     private TextView answerTextView;
     private TextView errorTextView;
+    private GenerateAnswerService service;
+    private ServiceConnection connection;
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Intent intent = new Intent(this, GenerateAnswerService.class);
+        bindService(intent,connection,BIND_AUTO_CREATE);
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        unbindService(connection);
+    }
 
     @Override
     public void onSaveInstanceState(@NonNull Bundle outState) {
@@ -35,6 +55,24 @@ public class QuestionActivity extends BaseActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        connection = new ServiceConnection() {
+            @Override
+            public void onServiceConnected(ComponentName name, IBinder binder) {
+                Log.d(TAG, "QuestionActivity onServiceConnected");
+                service = ((GenerateAnswerService.TestBinder) binder).generateAnswerService();
+                if(service != null){
+                    Log.i(TAG, "Service is bonded successfully!");
+                }else {
+                    Log.i(TAG,"Service is not bonded successfully!");
+                }
+            }
+
+            @Override
+            public void onServiceDisconnected(ComponentName name) {
+                service = null;
+            }
+        };
+
         setContentView(R.layout.activity_ask_question); // устанавливается разметка
         doneButton = findViewById(R.id.doneButton);
         tryAgainButton = findViewById(R.id.tryAgainButton);
@@ -53,7 +91,9 @@ public class QuestionActivity extends BaseActivity {
                 }
                 if (!TextUtils.isEmpty(myQuestion.getText())) {
                     toSuccessState();
-                    answerTextView.setText(GenerateAnswer.newInstance(myQuestion.getText().toString(), user).getAnswer());
+                    System.out.println(service+"-----");
+                    if(service == null) return;
+                    answerTextView.setText(service.generateAnswerBndg(user,myQuestion.getText().toString()));
                 } else {
                     Toast.makeText(this, "You not create question!", Toast.LENGTH_SHORT).show();
                 }
