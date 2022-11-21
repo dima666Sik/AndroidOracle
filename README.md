@@ -34,6 +34,5 @@ To run this project you will need to install this project in phone with Android 
 ![Settings](app/src/main/res/img/setting.jpg)
 ![Settings](app/src/main/res/img/setting_land.jpg)
 ### Ask a question
-![Ask a question](app/src/main/res/img/ask_a_question.jpg)
 ![Ask a question](app/src/main/res/img/ask_a_question_done.jpg)
 ![Ask a question](app/src/main/res/img/ask_a_question_done_land.jpg)
