@@ -3,7 +3,7 @@
 ## Preview
 1. This project uses jdk 8;
 2. Navigation is built on activities;
-3. Use Service and Binding for generate result in your question.
+3. Use Service and Binding and use HandlerThread for generate result in your question.
 
 ## Features
 ☑️Main screen with buttons:
