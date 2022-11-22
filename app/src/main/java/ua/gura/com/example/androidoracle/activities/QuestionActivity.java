@@ -4,6 +4,8 @@ import android.content.ComponentName;
 import android.content.Intent;
 import android.content.ServiceConnection;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.HandlerThread;
 import android.os.IBinder;
 import android.text.TextUtils;
 import android.util.Log;
@@ -21,8 +23,7 @@ import ua.gura.com.example.androidoracle.model.User;
 
 
 public class QuestionActivity extends BaseActivity {
-    private static final String TAG =
-            QuestionActivity.class.getSimpleName();
+    private static final String TAG = QuestionActivity.class.getSimpleName();
 
     private static final String KEY_GENERIC = "GET_GENERIC";
 
@@ -33,11 +34,20 @@ public class QuestionActivity extends BaseActivity {
     private GenerateAnswerService service;
     private ServiceConnection connection;
 
+    private final HandlerThread handlerThread = new HandlerThread("CustomThread");
+    private Handler handler;
+
     @Override
     protected void onStart() {
         super.onStart();
         Intent intent = new Intent(this, GenerateAnswerService.class);
-        bindService(intent,connection,BIND_AUTO_CREATE);
+        bindService(intent, connection, BIND_AUTO_CREATE);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        handlerThread.quit();
     }
 
     @Override
@@ -55,15 +65,19 @@ public class QuestionActivity extends BaseActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        handlerThread.start();
+        handler = new Handler(handlerThread.getLooper());
+        Log.d(TAG, "Start handlerThread...");
+
         connection = new ServiceConnection() {
             @Override
             public void onServiceConnected(ComponentName name, IBinder binder) {
                 Log.d(TAG, "QuestionActivity onServiceConnected");
                 service = ((GenerateAnswerService.TestBinder) binder).generateAnswerService();
-                if(service != null){
+                if (service != null) {
                     Log.i(TAG, "Service is bonded successfully!");
-                }else {
-                    Log.i(TAG,"Service is not bonded successfully!");
+                } else {
+                    Log.i(TAG, "Service is not bonded successfully!");
                 }
             }
 
@@ -85,15 +99,23 @@ public class QuestionActivity extends BaseActivity {
         Bundle bundle = getIntent().getExtras();
         tryAgainButton.setOnClickListener(v -> {
             try {
-                User user = null;
-                if (bundle != null) {
-                    user = (User) bundle.get("USER");
-                }
                 if (!TextUtils.isEmpty(myQuestion.getText())) {
                     toSuccessState();
-                    System.out.println(service+"-----");
-                    if(service == null) return;
-                    answerTextView.setText(service.generateAnswerBndg(user,myQuestion.getText().toString()));
+                    System.out.println(service + "-----");
+                    if (service == null) return;
+                    handler.post(() -> {
+                        User user = null;
+                        if (bundle != null) {
+                            user = (User) bundle.get("USER");
+                        }
+                        Log.d(TAG, "Action send from the thread: "
+                                + Thread.currentThread().getId());
+                        String result = service.generateAnswerBndg(user, myQuestion.getText().toString());
+                        Log.d(TAG, "Result: "
+                                + result);
+                        answerTextView.setText(result);
+                    });
+                    handlerThread.quitSafely();
                 } else {
                     Toast.makeText(this, "You not create question!", Toast.LENGTH_SHORT).show();
                 }
