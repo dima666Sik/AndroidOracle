@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="@dimen/screenPadding">
+    <TextView
+        android:id="@+id/titleTextView"
+        style="@style/ScreenTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/set_question"
+        android:textSize="@dimen/font_size"
+        android:textColor="@color/black"
+        android:fontFamily="sans-serif-medium"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints"  />
+
+    <TableLayout
+        android:id="@+id/resultsTable"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/doneButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/titleTextView">
+
+        <TableRow>
+
+            <TextView
+                style="@style/TextHint.Results"
+                android:textSize="12sp"
+                android:padding="10dp"
+                android:text="@string/textAsk" />
+
+            <EditText
+                android:id="@+id/myQuestion"
+                android:textSize="12sp"
+                style="@style/TextHint.Results"
+                android:hint="Fill in the field"
+                android:imeOptions="actionNext"
+                android:layout_height="match_parent" />
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                style="@style/TextHint.Results"
+                android:padding="8dp"
+                android:textSize="12sp"
+                android:text="@string/textAnswer" />
+
+            <TextView
+                android:id="@+id/getAnswer"
+                android:padding="8dp"
+                android:textSize="12sp"
+                style="@style/TextHint.Results.Value"
+                tools:text="Yes..." />
+        </TableRow>
+    </TableLayout>
+
+    <TextView
+        android:id="@+id/errorTextView"
+        android:layout_width="6dp"
+        android:layout_height="34dp"
+        android:gravity="center"
+        android:maxWidth="200dp"
+        android:textColor="@color/error"
+        android:textSize="42sp"
+        app:layout_constraintBottom_toBottomOf="@id/resultsTable"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/resultsTable"
+        tools:text="Error" />
+
+    <Button
+        android:id="@+id/tryAgainButton"
+        style="@style/PrimaryButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/try_again"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/resultsTable" />
+
+    <Button
+        android:id="@+id/doneButton"
+        style="@style/PrimaryButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/done"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/resultsTable" />
+
+</LinearLayout>
