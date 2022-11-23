@@ -97,6 +97,8 @@ public class QuestionActivity extends BaseActivity {
             answerTextView.setText(savedInstanceState.getString(KEY_GENERIC));
         }
         Bundle bundle = getIntent().getExtras();
+        Log.d(TAG, "Action send from the thread: "
+                + Thread.currentThread().getName());
         tryAgainButton.setOnClickListener(v -> {
             try {
                 if (!TextUtils.isEmpty(myQuestion.getText())) {
@@ -109,7 +111,7 @@ public class QuestionActivity extends BaseActivity {
                             user = (User) bundle.get("USER");
                         }
                         Log.d(TAG, "Action send from the thread: "
-                                + Thread.currentThread().getId());
+                                + Thread.currentThread().getName());
                         String result = service.generateAnswerBndg(user, myQuestion.getText().toString());
                         Log.d(TAG, "Result: "
                                 + result);
