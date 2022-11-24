@@ -1,4 +1,4 @@
-package ua.gura.com.example.andriodoracle;
+package ua.gura.com.example.androidoracle;
 
 import org.junit.Test;
 
