@@ -17,20 +17,11 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activities.MenuActivity"
-            android:label="MenuActivity" />
-        <activity
-            android:name=".activities.SettingActivity"
-            android:label="Settings" />
-        <activity
-            android:name=".activities.QuestionActivity"
-            android:label="Question" />
-        <activity
             android:name=".activities.BaseActivity"
             android:label="BaseActivity" />
-
-        <service android:name=".generator.GenerateAnswerService" />
-
+        <activity
+            android:name=".activities.DetailsActivity"
+            android:label="DetailsActivity" />
     </application>
 
 </manifest>
