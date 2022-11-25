@@ -5,4 +5,5 @@
     <dimen name="zero_dp">0dp</dimen>
     <dimen name="margin_list">14dp</dimen>
     <dimen name="textSizeName">20sp</dimen>
+    <dimen name="buttonRadius">18dp</dimen>
 </resources>
