@@ -20,8 +20,8 @@ public class DateNagerService {
         this.dateNagerApi = dateNagerApi;
     }
 
-    public Cancellable getHolidays(String nameHoliday, Callback<List<Holiday>> callback) {
-        Call<List<HolidayNetworkEntity>> listCall = dateNagerApi.getHolidays(nameHoliday);
+    public Cancellable getHolidays(String holidayCountryCode, Callback<List<Holiday>> callback) {
+        Call<List<HolidayNetworkEntity>> listCall = dateNagerApi.getHolidays(holidayCountryCode);
         listCall.enqueue(new retrofit2.Callback<List<HolidayNetworkEntity>>() {
             @Override
             public void onResponse(Call<List<HolidayNetworkEntity>> call, Response<List<HolidayNetworkEntity>> response) {

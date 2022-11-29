@@ -17,10 +17,11 @@
         app:layout_constraintEnd_toEndOf="parent"/>
 
     <EditText
-        android:id="@+id/userNameEditText"
+        android:id="@+id/countryCodeHolidayEditText"
         android:layout_width="@dimen/zero_dp"
         android:layout_height="wrap_content"
         android:imeOptions="actionSearch"
+        android:hint="Write code country:for ex. AT"
         android:lines="1"
         android:layout_marginStart="@dimen/screenPadding"
         app:layout_constraintStart_toStartOf="parent"

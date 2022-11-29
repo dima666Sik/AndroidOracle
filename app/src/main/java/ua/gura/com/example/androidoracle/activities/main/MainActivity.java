@@ -20,7 +20,7 @@ import ua.gura.com.example.androidoracle.activities.details.DetailsActivity;
 public class MainActivity extends BaseActivity {
     private Button searchButton;
     private RecyclerView holidaysViewList;
-    private EditText namedHolidayEditText;
+    private EditText countryCodeHolidayEditText;
     private ProgressBar progressBar;
     private TextView emptyTextView;
     private TextView errorTextView;
@@ -35,7 +35,7 @@ public class MainActivity extends BaseActivity {
 
         searchButton = findViewById(R.id.searchButton);
         holidaysViewList = findViewById(R.id.holidaysList);
-        namedHolidayEditText = findViewById(R.id.userNameEditText);
+        countryCodeHolidayEditText = findViewById(R.id.countryCodeHolidayEditText);
         progressBar = findViewById(R.id.progress);
         emptyTextView = findViewById(R.id.emptyTextView);
         errorTextView = findViewById(R.id.errorTextView);
@@ -55,8 +55,8 @@ public class MainActivity extends BaseActivity {
         });
 
         searchButton.setOnClickListener(v -> {
-            String userName = namedHolidayEditText.getText().toString();
-            mainViewModel.getHolidays(userName);
+            String countryCodeHoliday = countryCodeHolidayEditText.getText().toString();
+            mainViewModel.getHolidays(countryCodeHoliday);
         });
 
         initHolidaysList();

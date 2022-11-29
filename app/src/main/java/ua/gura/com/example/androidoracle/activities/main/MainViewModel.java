@@ -49,9 +49,9 @@ public class MainViewModel extends BaseViewModel {
         return stateMutableLiveData;
     }
 
-    public void getHolidays(String holidayName) {
+    public void getHolidays(String holidayCountryCode) {
         updateViewState(Result.loading());
-        cancellable = getDateNagerService().getHolidays(holidayName, new Callback<List<Holiday>>() {
+        cancellable = getDateNagerService().getHolidays(holidayCountryCode, new Callback<List<Holiday>>() {
             @Override
             public void onError(Throwable error) {
                 if (holidaysResult.getStatus() != Result.Status.SUCCESS)

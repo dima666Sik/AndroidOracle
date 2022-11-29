@@ -4,6 +4,7 @@ public class HolidayNetworkEntity {
     private String date;
     private String name;
     private int launchYear;
+    private String countryCode;
 
     public String getDate() {
         return date;
@@ -15,5 +16,9 @@ public class HolidayNetworkEntity {
 
     public int getLaunchYear() {
         return launchYear;
+    }
+
+    public String getCountryCode() {
+        return countryCode;
     }
 }
