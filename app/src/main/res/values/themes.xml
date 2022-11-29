@@ -56,4 +56,5 @@
         <item name="android:layout_marginStart">32dp</item>
     </style>
 
+    <dimen name="menuButtonWidth">22dp</dimen>
 </resources>

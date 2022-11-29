@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.DetailsActivity">
+    tools:context=".activities.details.DetailsActivity">
 
     <TextView
         android:id="@+id/nameTextView"
@@ -14,7 +14,7 @@
         android:gravity="center"
         android:textColor="@color/primaryText"
         android:layout_height="wrap_content"
-        tools:text="@string/some_repo_name"
+        tools:text="@string/some_holi_name"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

@@ -1,4 +1,4 @@
-package ua.gura.com.example.androidoracle.activities;
+package ua.gura.com.example.androidoracle.activities.main;
 
 import androidx.appcompat.app.AppCompatActivity;
 

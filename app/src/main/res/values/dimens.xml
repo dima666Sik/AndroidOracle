@@ -6,4 +6,7 @@
     <dimen name="margin_list">14dp</dimen>
     <dimen name="textSizeName">20sp</dimen>
     <dimen name="buttonRadius">18dp</dimen>
+    <dimen name="img_size">36dp</dimen>
+    <dimen name="img_pad">4dp</dimen>
+    <dimen name="marEnd">6dp</dimen>
 </resources>

@@ -9,7 +9,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
-    <color name="colorAccent">#D81B60</color>
+    <color name="colorAccent">#FF5722</color>
     <color name="primaryText">#232323</color>
     <color name="secondaryText">#868686</color>
     <color name="button">@color/colorPrimary</color>
@@ -23,4 +23,5 @@
     <color name="secondaryButtonText">@color/primaryText</color>
     <color name="secondaryButtonTextDisabled">#a0a0a0</color>
     <color name="error">#ef0022</color>
+    <color name="deepBlack">#000000</color>
 </resources>

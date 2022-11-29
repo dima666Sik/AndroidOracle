@@ -2,8 +2,8 @@
     <string name="app_name">AndroidRemoteOpenDataServers</string>
     <string name="app_version">App Version: %1$s</string>
     <string name="search">Search</string>
-    <string name="no_repositories">No repositories</string>
+    <string name="no_holidays">No holidays</string>
     <string name="some_error_was_happening_upon_loading_the_list">Some error was happening upon loading the list</string>
-    <string name="some_repo_name">Some Repo name</string>
+    <string name="some_holi_name">Some holiday name</string>
     <string name="some_description_here">Some description here</string>
 </resources>
