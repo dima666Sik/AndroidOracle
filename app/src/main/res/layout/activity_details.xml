@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.details.DetailsActivity">
+
+    <TextView
+        android:id="@+id/nameTextView"
+        android:layout_width="@dimen/zero_dp"
+        android:textSize="@dimen/textSizeName"
+        android:layout_marginTop="@dimen/screenPadding"
+        android:gravity="center"
+        android:textColor="@color/primaryText"
+        android:layout_height="wrap_content"
+        tools:text="@string/some_holi_name"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/descriptionDateTextView"
+        android:layout_width="@dimen/zero_dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_list"
+        android:textSize="@dimen/font_size"
+        android:text="@string/date_holiday"
+        app:layout_constraintStart_toStartOf="@id/nameTextView"
+        app:layout_constraintEnd_toStartOf="@id/dateTextView"
+        app:layout_constraintTop_toBottomOf="@id/nameTextView"/>
+
+    <TextView
+        android:id="@+id/dateTextView"
+        android:layout_width="@dimen/zero_dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_list"
+        android:text="@string/some_description_here"
+        android:textSize="@dimen/font_size"
+        app:layout_constraintBottom_toBottomOf="@+id/descriptionDateTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/descriptionLaunchYearTextView"
+        android:layout_width="@dimen/zero_dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:text="@string/launch_year_holiday"
+        android:textSize="@dimen/font_size"
+        app:layout_constraintEnd_toStartOf="@id/dateTextView"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@id/nameTextView"
+        app:layout_constraintTop_toBottomOf="@id/nameTextView" />
+
+    <TextView
+        android:id="@+id/launchYearTextView"
+        android:layout_width="@dimen/zero_dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_list"
+        android:text="@string/some_description_here"
+        android:textSize="@dimen/font_size"
+        app:layout_constraintBottom_toBottomOf="@+id/descriptionLaunchYearTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/descriptionCountryCodeTextView"
+        android:layout_width="@dimen/zero_dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="56dp"
+        android:text="@string/country_code_holiday"
+        android:textSize="@dimen/font_size"
+        app:layout_constraintEnd_toStartOf="@id/dateTextView"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@id/nameTextView"
+        app:layout_constraintTop_toBottomOf="@id/nameTextView" />
+
+    <TextView
+        android:id="@+id/countryCodeTextView"
+        android:layout_width="@dimen/zero_dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_list"
+        android:text="@string/some_description_here"
+        android:textSize="@dimen/font_size"
+        app:layout_constraintBottom_toBottomOf="@+id/descriptionCountryCodeTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+</androidx.constraintlayout.widget.ConstraintLayout>
