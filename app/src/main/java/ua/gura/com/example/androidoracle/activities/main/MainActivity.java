@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -66,8 +67,12 @@ public class MainActivity extends BaseActivity {
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
         holidaysViewList.setLayoutManager(layoutManager);
         adapter = new HolidaysAdapter(holiday -> {
+            System.out.println(holiday);
             Intent intent = new Intent(this, DetailsActivity.class);
             intent.putExtra(DetailsActivity.EXTRA_HOLIDAY_NAME, holiday.getName());
+            intent.putExtra(DetailsActivity.EXTRA_HOLIDAY_COUNTY_CODE, holiday.getCountryCode());
+            intent.putExtra(DetailsActivity.EXTRA_HOLIDAY_DATE, holiday.getDate());
+            intent.putExtra(DetailsActivity.EXTRA_HOLIDAY_LAUNCH_YEAR, holiday.getLaunchYear());
             startActivity(intent);
         });
         holidaysViewList.setAdapter(adapter);

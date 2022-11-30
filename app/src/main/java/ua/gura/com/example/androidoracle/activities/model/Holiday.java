@@ -1,5 +1,6 @@
 package ua.gura.com.example.androidoracle.activities.model;
 
+import ua.gura.com.example.androidoracle.activities.model.db.HolidayDB;
 import ua.gura.com.example.androidoracle.activities.model.network.HolidayNetworkEntity;
 
 public class Holiday {
@@ -15,7 +16,7 @@ public class Holiday {
         this.countryCode = countryCode;
     }
 
-    public Holiday(HolidayNetworkEntity entity) {
+    public Holiday(HolidayDB entity) {
         this(entity.getDate(),
                 entity.getName(),
                 entity.getLaunchYear(),
@@ -38,4 +39,15 @@ public class Holiday {
     public String getCountryCode() {
         return countryCode;
     }
+
+    @Override
+    public String toString() {
+        return "Holiday{" +
+                "date='" + date + '\'' +
+                ", name='" + name + '\'' +
+                ", launchYear=" + launchYear +
+                ", countryCode='" + countryCode + '\'' +
+                '}';
+    }
 }
+
