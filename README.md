@@ -27,9 +27,9 @@ another screen with detailed information when the item is selected.
 To run this project you will need to install this project in phone with Android Operating System.
 
 ## Program testing
-Main Activity
+<i><b>Main Activity</b></i><br>
 ![Main Activity](app/src/main/res/img/img_AT_holidays.jpg)
 ![Main Activity](app/src/main/res/img/img_AL_holidays.jpg)
-Details Activity
-For example, for country AT holidays
+<i><b>Details Activity</b></i><br>
+For example, for country AT holidays<br>
 ![Main Activity](app/src/main/res/img/img_AT_holiday_NYD.jpg)
