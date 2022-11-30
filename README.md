@@ -30,6 +30,6 @@ To run this project you will need to install this project in phone with Android 
 <i><b>Main Activity</b></i><br>
 ![Main Activity](app/src/main/res/img/img_AT_holidays.jpg)
 ![Main Activity](app/src/main/res/img/img_AL_holidays.jpg)
-<i><b>Details Activity</b></i><br>
+<br><i><b>Details Activity</b></i><br>
 For example, for country AT holidays<br>
 ![Main Activity](app/src/main/res/img/img_AT_holiday_NYD.jpg)
